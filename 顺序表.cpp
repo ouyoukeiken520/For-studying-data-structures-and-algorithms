@@ -1,6 +1,7 @@
 #include <iostream>
 using namespace std;
-template <typename T> class List {
+template <typename T>
+class List {
   T *array;
   int capacity;
   int size;
