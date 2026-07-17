@@ -86,11 +86,6 @@ public:
     }    
 };
 
-void printTitle(const string &title) {
-    cout << "\n========================================" << endl;
-    cout << "  " << title << endl;
-    cout << "========================================" << endl;
-}
 int main() {
 // 测试链表
     cout << "=== 1. 初始化链表 ===" << endl;
