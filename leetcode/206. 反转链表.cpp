@@ -9,24 +9,15 @@ struct ListNode {
 class Solution {
 public:
   ListNode *reverseList(ListNode *head) {
-    if (head == nullptr) {
-      return head;
+    ListNode *newhead = nullptr;
+    ListNode *tmp = nullptr;
+    while (head != nullptr) {
+      tmp = head->next;
+      head->next = newhead;
+      newhead = head;
+      head = tmp;
     }
-    ListNode *node = head;
-    ListNode *newhead = head;
-    while (node->next != nullptr) {
-      node = node->next;
-    }
-    newhead = node;
-    node = head;
-    while (node->next != nullptr) {
-      while (node->next->next != nullptr) {
-        node = node->next;
-      }
-      node->next->next = node;
-      node->next = nullptr;
-      node = head;
-    }
+
     return newhead;
   }
 };
