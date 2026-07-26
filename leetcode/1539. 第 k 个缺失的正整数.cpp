@@ -3,16 +3,18 @@ using namespace std;
 class Solution {
 public:
   int findKthPositive(vector<int> &arr, int k) {
-    int j = 1, i = 0;
-    while (i < arr.size()) {
-      if (arr[i] != j) {
-        if (--k == 0)
-          return j; 
+    if (arr[0] > k)
+      return k;
+    int l = 0, r = arr.size();
+    while (l < r) {
+      int mid = (l + r) / 2;
+      if (arr[mid] - mid - 1 >= k) {
+        r = mid;
       } else {
-        i++;
+        l = mid + 1;
       }
-      j++;
     }
-    return j + k - 1;
+
+    return k + (l - 1) + 1;
   }
 };
