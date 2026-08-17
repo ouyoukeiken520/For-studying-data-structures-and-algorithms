@@ -6,7 +6,6 @@ public:
   int element;
   Tree *left;
   Tree *right;
-
   Tree(int e) {
     element = e;
     left = right = NULL;
@@ -95,15 +94,6 @@ void printFindResult(Tree *root, int ele) {
 }
 int main() {
   cout << "========== 阶段 1: 构建二叉搜索树 ==========" << endl;
-  /* 构建的树结构如下：
-          50
-        /    \
-      30      70
-      /  \    /  \
-    20  40  60  80
-        /  \       \
-        35  45      90
-  */
   Tree *root = new Tree(50);
   root->insert(30);
   root->insert(70);
